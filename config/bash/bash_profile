@@ -1,0 +1,18 @@
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+export PATH=~/.local/bin:$PATH
+export PATH=$HOME/.scripts:$PATH
+#export XDG_CONFIG_HOME=$HOME/.config
+#export SYSCONFDIR=$HOME/.config
+export EDITOR="nvim"
+export TERMINAL="kitty"
+
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Hyprland >/dev/null 2>&1 && exec whypr
+
+export PATH=$HOME/.scripts:$PATH
+
+export PATH=$HOME/.scripts:$PATH

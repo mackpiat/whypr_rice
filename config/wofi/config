@@ -1,0 +1,14 @@
+width=600
+height=400
+mode=drun
+filter_rate=100
+allow_markup=true
+allow_images=true
+no_actions=true
+term=foot
+halign=fill
+orientation=vertical
+content_halign=fill
+drun-display_generic=true
+dynamic_lines=true
+cache_file=/dev/null

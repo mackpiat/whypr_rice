@@ -1,0 +1,51 @@
+#window {
+  background-color: rgba(40, 40, 40, 0.9);
+  opacity: 1.0;
+  border-radius: 2px;
+  color: rgba(251, 241, 199, 0.8);
+  font-family: SourceCodePro-Regular;
+}
+
+#input {
+  background-color: transparent;
+  border-radius: 2px;
+  opacity: 1.0;
+  border: none;
+  color: #fbf1c7;
+}
+
+#inner-box {
+  margin: 2px;
+}
+
+#outer-box {
+  background-color: rgba(40, 40, 40, 0.9);
+  padding: 5px;
+}
+
+#scroll {
+  margin: 0px;
+  border: none;
+}
+
+#text {
+  margin: 5px;
+  border: none;
+  color: #fbf1c7;
+  opacity: none;
+}
+
+#entry:focus {
+  border: none;
+}
+
+#entry:selected {
+  background-color: #458588;
+  opacity: 1.0;
+  border: none;
+}
+
+#img {
+  background-color: transparent;
+  padding: 5px;
+}
