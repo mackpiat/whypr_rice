@@ -4,6 +4,7 @@ A,hyprland-git
 A,libdisplay-info
 A,waybar-hyprland-git
 A,qt5-styleplugins
+A,wl-gammarelay
 P,android-tool
 P,android-udev
 P,archlinux-keyring
@@ -51,7 +52,6 @@ P,python-pillow
 P,python-pip
 P,qt6-translations
 P,ranger
-P,redshift
 P,sc-im
 P,scrcpy
 P,simple-mtpfs

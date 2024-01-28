@@ -53,7 +53,6 @@ tooltip {
 #custom-caffeine,
 #custom-weather,
 #custom-torrents,
-#custom-wl_gammarelay_temperature,
 #window,
 #clock,
 #battery,
@@ -66,6 +65,7 @@ tooltip {
     padding: 0px 10px;
     margin: 3px 0px;
     margin-top: 10px;
+    border: 1px solid #181825;
 }
 
 #tray {
@@ -80,6 +80,26 @@ tooltip {
     margin-left: 10px;
     padding-right: 0px;
     padding-left: 5px;
+}
+
+#custom-caffeine {
+    color: #83a598;
+    border-radius: 10px 0px 0px 10px;
+    border-right: 0px;
+    margin-left: 10px;
+}
+
+#custom-language {
+    color: #d3869b;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#custom-updates {
+    color: #b16286;
+    border-radius: 0px 0px 0px 0px;
+    border-left: 0px;
+    border-right: 0px;
 }
 
 #window {
@@ -97,7 +117,7 @@ tooltip {
 #network {
     color: #d5c4a1;
     border-radius: 0px 10px 10px 0px;
-    margin-right: 5px;
+    margin-right: 10px;
     border-left: 0px;
     border-right: 0px;
 }
@@ -119,46 +139,21 @@ tooltip {
     border-left: 0px;
 }
 
+#custom-weather {
+    border-radius: 0px 10px 10px 0px;
+    border-right: 0px;
+    margin-left: 0px;
+}
+
 #backlight {
     color: #d5c4a1;
-    border-radius: 0px 0px 0px 0px;
-
-}
-
-#custom-updates {
-    color: #b16286;
-    border-radius: 0px 10px 10px 0px;
     border-left: 0px;
     border-right: 0px;
-    margin-right: 10px;
-}
 
-#custom-weather {
-    border-radius: 0px 0px 0px 0px;
-    border-right: 0px;
-    margin-left: 0px;
-    color: #fb4934;
-}
-
-#custom-caffeine {
-    color: #83a598;
-    border-radius: 0px 0px 0px 0px;
-    border-right: 0px;
-    margin-left: 0px;
-}
-
-#custom-language {
-    color: #d3869b;
-    border-left: 0px;
-    border-right: 0px;
 }
 
 #custom-torrents {
     border-radius: 10px 0px 0px 10px;
-    margin-right: 0px;
-}
-
-#custom-wl_gammarelay_temperature {
-    border-radius: 10px 0px 0px 10px;
-    margin-right: 0px;
+    border-right: 0px;
+    margin-left: 0px;
 }

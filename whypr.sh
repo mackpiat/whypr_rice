@@ -6,7 +6,7 @@ pacinstall() {
 
 gitinstall() {
 	out="/tmp/$(echo "$1" | awk -F '/' '{print $(NF)}' | awk '{split($0,i,"."); print i[1]}')"
-	git clone $1 ${out} && cd ${out} && makepkg -si && cd ~
+	git clone $1 ${out} && cd ${out} && makepkg -si --noconfirm && cd ~
 }
 
 aurinstall() {
@@ -27,7 +27,7 @@ dotscopy() {
 
 ls /tmp/pac.csv >/dev/null 2>&1
 if (( $? != 0 )); then
-	curl -L https://gitlab.com/manugurudath/whypr/-/raw/main/pac.csv -o /tmp/pac.csv
+	curl -L https://gitlab.com/hyprd/whypr/-/raw/main/pac.csv -o /tmp/pac.csv
 fi
 
 sudo chsh -s /bin/zsh $(whoami) >/dev/null 2>&1

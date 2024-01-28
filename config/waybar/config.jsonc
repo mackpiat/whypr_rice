@@ -7,14 +7,18 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        "wlr/workspaces",
+        "hyprland/workspaces",
 	"hyprland/window"
     ],
     "modules-center": [],
     "modules-right": [
 	"tray",
-        "custom/updates",
+	"custom/torrents",
         "custom/language",
+        "custom/updates",
+	//"custom/weather",
+	"custom/wl_gammarelay_temperature",
+	//"custom/wl_gammarelay_brightness",
 	"backlight",
 	"pulseaudio#microphone",
         "pulseaudio",
@@ -46,15 +50,23 @@
     },
     "custom/updates": {
         "exec": "(pacman -Qu ; yay -Qua) | wc -l",
+	"on-click" : "kitty -e sudo pacman -Syu && yay -Syu",
         "interval": 7200,
         "format": " {}"
     },
    "custom/weather" : {
         "tooltip" : true,
         "format" : "{}",
-        "interval" : 30,
-        "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type" : "json"
+        "interval" : 60,
+        "exec" : "~/.config/waybar/scripts/wb-wttr.sh",
+	"max-length" : 7
+    },
+    "custom/torrents" : {
+        "tooltip" : true,
+        "format" : "{}",
+	"interval" : 60,
+        "exec" : "~/.config/waybar/scripts/wb-tremc.sh",
+	"on-click" : "kitty -e tremc"
     },
     "tray": {
         "icon-size": 13,
@@ -73,6 +85,7 @@
         "min-length": 6
     },
     "battery": {
+	"interval" : 2,
         "states": {
             "good": 95,
             "warning": 30,
@@ -92,7 +105,7 @@
 	"format-disconnected": "",
 	"on-click": "winet",
 	"tooltip-format": "{ifname}",
-	"tooltip-format-wifi": " ({signalStrength}%)",
+	"tooltip-format-wifi": " {ifname}",
 	"tooltip-format-ethernet": " {ifname}",
 	"tooltip-format-disconnected": " Disconnected",
 	"max-length": 50
@@ -123,5 +136,11 @@
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
         "scroll-step": 5
+    },
+    "custom/wl_gammarelay_temperature": {
+	"format": " {}",
+	"exec": "wl-gammarelay --subscribe Temperature",
+	"on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100",
+	"on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100"
     }
 }
