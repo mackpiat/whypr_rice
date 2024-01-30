@@ -36,7 +36,7 @@ while IFS=, read -r tag program; do
 	case "$tag" in
 		P) pacinstall "$program";;
 		G) gitinstall "$program";;
-		A) yayinstall "$program";;
+		A) aurinstall "$program";;
 		D) dotscopy "$program";;
 	esac
 done < /tmp/pac.csv
