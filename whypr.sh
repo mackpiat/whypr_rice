@@ -19,6 +19,7 @@ dotscopy() {
 	ls ${out}/config/ >/dev/null 2>&1; [ $? -eq 0 ] && mkdir -p $HOME/.config; cp -r ${out}/config/* $HOME/.config/ &&
 	ls ${out}/local/bin/ >/dev/null 2>&1; [ $? -eq 0 ] && mkdir -p $HOME/.local/bin; cp -r ${out}/local/bin/* $HOME/.local/bin &&
 	ls ${out}/local/share/ >/dev/null 2>&1; [ $? -eq 0 ] && mkdir -p $HOME/.local/share; cp -r ${out}/local/share/* $HOME/.local/share &&
+	ls ${out}/local/src/ >/dev/null 2>&1; [ $? -eq 0 ] && mkdir -p $HOME/.local/share; cp -r ${out}/local/src/* $HOME/.local/src &&
 #	curl -L https://gitlab.com/mACKplAT/foosh/-/raw/simplepas/myencpas -o $HOME/.local/bin/myencpas &&
 	ln -s $HOME/.config/shell/profile $HOME/.zprofile &&
 	sleep 10
