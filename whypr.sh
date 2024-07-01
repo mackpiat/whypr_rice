@@ -30,7 +30,7 @@ if (( $? != 0 )); then
 	curl -L https://gitlab.com/hyprd/whypr/-/raw/main/pac.csv -o /tmp/pac.csv
 fi
 
-sudo chsh -s /bin/zsh $(whoami) >/dev/null 2>&1
+sudo chsh -s $(which zsh) $(whoami) >/dev/null 2>&1
 
 while IFS=, read -r tag program; do
 	case "$tag" in
