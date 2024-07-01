@@ -17,7 +17,7 @@
         "custom/language",
         "custom/updates",
 	//"custom/weather",
-	"custom/wl_gammarelay_temperature",
+	//"custom/wl_gammarelay_temperature",
 	//"custom/wl_gammarelay_brightness",
 	"backlight",
 	"pulseaudio#microphone",
@@ -73,7 +73,9 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{: %R   (%a) %d/%m}",
+	"interval": 60,
+        "format": " {:%R}",
+	"format-alt": " {:%a %d/%m}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "backlight": {

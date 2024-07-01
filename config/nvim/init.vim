@@ -22,6 +22,7 @@ Plug 'ap/vim-css-color'
 Plug 'morhetz/gruvbox'
 Plug 'lervag/vimtex'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 set title
