@@ -1,6 +1,9 @@
 D,https://gitlab.com/hyprd/whypr.git
 G,https://aur.archlinux.org/yay-git.git
 A,qt5-styleplugins
+A,gruvbox-material-gtk-theme-git
+A,gruvbox-material-icon-theme-git
+A,xcursor-simp1e-gruvbox-dark
 P,archlinux-keyring
 P,bc
 P,bluez
