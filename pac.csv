@@ -23,12 +23,14 @@ P,htop
 P,htop-vim
 P,hyprland
 P,irssi
+P,lxsession
 P,man-db
 P,mpv
 P,nemo
 P,neovim
 P,noto-fonts
 P,noto-fonts-emoji
+P,nwg-look
 P,ttf-hack
 P,ttf-hack-nerd
 P,ttf-font-awesome
@@ -38,6 +40,7 @@ P,pipewire-audio
 P,pipewire-pulse
 P,python-pip
 P,python-pipx
+P,python-pynvim
 P,scrcpy
 P,swayidle
 P,swayimg
