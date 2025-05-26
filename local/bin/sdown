@@ -1,12 +1,12 @@
 #!/bin/sh
 
-case "$(printf "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n" " Lock" " Leave Hyprland" " Renew Hyprland" " Sleep" " Hibernate" " Reboot" " Shutdown" " Display Off" | wofi -d -i -w 8 -l top -W 1000 -H 10 -p "Power Menu")" in
-	' Lock') swaylock ;;
-	' Leave Hyprland') hyprctl dispatch exit ;;
-	' Renew Hyprland') hyprctl reload ;;
+case "$(printf "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n" "  Lock" "  Leave Hyprland" "  Renew Hyprland" " Sleep" " Hibernate" "  Reboot" " Shutdown" " Display Off" | wofi -d -i -w 8 -l top -W 1000 -H 75 -p "Power Menu")" in
+	'  Lock') swaylock ;;
+	'  Leave Hyprland') hyprctl dispatch exit ;;
+	'  Renew Hyprland') hyprctl reload ;;
 	' Sleep') swaylock -f -c 000000 | systemctl suspend -i ;;
 	' Hibernate') swaylock -f -c 000000 | systemctl hibernate -i ;;
-	' Reboot') systemctl reboot -i ;;
-	' Shutdown') systemctl poweroff -i ;;
-	' Display Off') hyprctl dispatch dpms off ;;
+	'  Reboot') systemctl reboot -i ;;
+	' Shutdown') systemctl poweroff -i ;;
+	' Display Off') hyprctl dispatch dpms off ;;
 esac

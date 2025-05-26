@@ -14,14 +14,12 @@ P,clutter
 P,cups
 P,curl
 P,dunst
-P,dnsmasq
 P,exfat-utils
 P,ffmpeg
 P,ffmpegthumbnailer
 P,firefox
 P,git
 P,htop
-P,htop-vim
 P,hyprland
 P,irssi
 P,lxsession
@@ -38,7 +36,6 @@ P,ttf-font-awesome
 P,pamixer
 P,pipewire
 P,pipewire-audio
-P,pipewire-pulse
 P,python-pip
 P,python-pipx
 P,python-pynvim
@@ -51,7 +48,6 @@ P,unzip
 P,wireplumber
 P,wl-clipboard
 P,wofi
-P,wpa_supplicant
 P,waybar
 P,yt-dlp
 P,zathura
