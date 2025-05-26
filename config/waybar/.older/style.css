@@ -1,0 +1,164 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: SourceCodePro-Regular, monospace;
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(40, 40, 40, 0);
+    color: #ebdbb2;
+}
+
+tooltip {
+    background: #282828;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #11111b;
+}
+
+#workspaces button {
+    padding: 5px;
+    color: #a89984;
+    margin-right: 5px;
+}
+
+#workspaces button.active {
+    color: #fbf1c7;
+}
+
+#workspaces button.focused {
+    color: #83a598;
+    background: #7c6f64;
+    border-radius: 10px;
+}
+
+#workspaces button.urgent {
+    color: #d5c4a1;
+    background: #689d6a;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    background: #458588;
+    color: #282828;
+    border-radius: 10px;
+}
+
+#custom-language,
+#custom-updates,
+#custom-caffeine,
+#custom-weather,
+#custom-torrents,
+#custom-wl_gammarelay_temperature,
+#window,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#workspaces,
+#tray,
+#backlight {
+    background: #282828;
+    padding: 0px 10px;
+    margin: 3px 0px;
+    margin-top: 10px;
+}
+
+#tray {
+    background: #282828;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+#workspaces {
+    background: #282828;
+    border-radius: 10px;
+    margin-left: 10px;
+    padding-right: 0px;
+    padding-left: 5px;
+}
+
+#window {
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+#clock {
+    color: #fabd2f;
+    margin-left: 0px;
+    border-right: 0px;
+}
+
+#network {
+    color: #d5c4a1;
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 5px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#pulseaudio {
+    color: #83a598;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#pulseaudio.microphone {
+    color: #d3869b;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#battery {
+    color: #8ec07c;
+    border-left: 0px;
+}
+
+#backlight {
+    color: #d5c4a1;
+    border-radius: 10px 0px 0px 10px;
+
+}
+
+#custom-updates {
+    color: #b16286;
+    border-radius: 0px 10px 10px 0px;
+    border-left: 0px;
+    border-right: 0px;
+    margin-right: 10px;
+}
+
+#custom-weather {
+    border-radius: 0px 0px 0px 0px;
+    border-right: 0px;
+    margin-left: 0px;
+    color: #fb4934;
+}
+
+#custom-caffeine {
+    color: #83a598;
+    border-radius: 0px 0px 0px 0px;
+    border-right: 0px;
+    margin-left: 0px;
+}
+
+#custom-language {
+    color: #d3869b;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#custom-torrents {
+    border-radius: 10px 0px 0px 10px;
+    margin-right: 0px;
+}
+
+#custom-wl_gammarelay_temperature {
+    border-radius: 10px 0px 0px 10px;
+    margin-right: 0px;
+}

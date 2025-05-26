@@ -1,0 +1,55 @@
+#!/bin/sh
+
+VMS=('ubuntu-server' 'opensuse-tw')
+IPS=('192.168.31.7' '192.168.31.6')
+
+PIDDIR="$HOME/mydir/qemuvirt/runpid"
+MENUXML="$HOME/.config/waybar/scripts/qemu_menu.xml"
+MENU2XML="$HOME/.config/waybar/scripts/qemu_menu2.xml"
+
+RUNNING=()
+BLINKING=()
+TOOLTIP=""
+
+for vm in ${!VMS[@]}
+do
+    avm="${VMS[$vm]}"
+    aip="${IPS[$vm]}"
+    PIDF="$PIDDIR/qemu-$avm.pid"
+
+    id="${avm//-/_}"  # Replace hyphens with underscores for the XML file
+    label="$(echo "$avm" | sed 's/-/ /g' | sed -E 's/(^| )(\w)/\1\u\2/g')"
+
+    if [ -f "$PIDF" ]; then
+        if ping -c 1 -W 1 "$aip" > /dev/null 2>&1; then
+            RUNNING+=("$avm")
+            TOOLTIP+="🟢 $avm\n"
+        else
+            BLINKING+=("$avm")
+            TOOLTIP+="🟡 $avm (booting)\n"
+        fi
+    fi
+done
+
+TOTAL=$(( ${#RUNNING[@]} + ${#BLINKING[@]} ))
+
+if [ "$TOTAL" -gt 0 ]; then
+    ICON="🖥️ $TOTAL"
+    if [ "${#BLINKING[@]}" -gt 0 ]; then
+        CLASS="booting"
+    else
+        CLASS="running"
+    fi
+else
+    ICON="⚫ No VMs"
+    CLASS="stopped"
+    TOOLTIP="No VMs running"
+
+    for fvm in ${VMS[@]}
+    do
+        fid="${fvm//-/_}"  # Replace hyphens with underscores for the XML file
+        flabel="$(echo "$fvm" | sed 's/-/ /g' | sed -E 's/(^| )(\w)/\1\u\2/g')"
+    done
+fi
+
+echo "{\"text\": \"$ICON\", \"tooltip\": \"$TOOLTIP\", \"class\": \"$CLASS\"}"
