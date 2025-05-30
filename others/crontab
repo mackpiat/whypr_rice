@@ -1,0 +1,1 @@
+0 6,9,17,22 * * * XDG_RUNTIME_DIR=/run/user/$(id -u) WAYLAND_DISPLAY=wayland-1 ~/.local/bin/hypr/gamma
