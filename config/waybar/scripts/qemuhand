@@ -1,0 +1,15 @@
+#!/bin/sh
+
+PIDS=(
+    'qemu-opensuse-tw.pid'
+    'qemu-ubuntu-server.pid'
+)
+
+for running in "${PIDS[@]}"
+do
+    if [ "${running}" == "$(ls $HOME/mydir/qemuvirt/runpid)" ]; then
+        vm=${running}
+        check=$(echo $vm | awk '{split($0,i,"-"); print i[2]"-"i[3];}' | sed -e 's/.pid//g')
+        [[ "$vm" == *$check* ]] && kitty -e bash -c "figlet "$check"; ssh $check"
+    fi
+done
