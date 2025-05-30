@@ -17,6 +17,7 @@
 //        "sway/window"
 //    ],
     "modules-right": [
+        "tray",
 //        "mpd",
 //        "idle_inhibitor",
         "custom/qemu",
@@ -32,7 +33,6 @@
         "battery",
 //        "battery#bat2",
         "clock",
-        "tray",
         "custom/power"
     ],
     // Modules configuration
