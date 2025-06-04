@@ -4,9 +4,10 @@ PIDS=(
     'qemu-opensuse-tw.pid'
     'qemu-ubuntu-server.pid'
 )
-QEMDIR="$HOME/qemuvirt"
+QEMDIR="$HOME/mydir/qemuvirt"
 found_any_running=false
 vmstmp=$(mktemp)
+export vmstmp
 
 for running in "${PIDS[@]}"
 do
@@ -21,32 +22,38 @@ done
 if ! $found_any_running; then
     mapfile -t exivm < <(find "$QEMDIR/virts" -mindepth 1 -maxdepth 1 -type f -printf '%f\n' | sort)
 
+    echo $exivm
+
     for i in "${!exivm[@]}"; do
-        echo $((i + 1)). ${exivm[i]} >> $vmstmp
+        echo ${exivm[i]} >> $vmstmp
     done
 
-    kitty -e bash -c "
-    printf '%s\n\n' 'Available VMs'
-    cat ${vmstmp}
-    read -p $'\nWhich one would you like to start? [1-'${#exivm[@]}']: ' choice
-    if [[ \$choice =~ ^[0-9]+$ ]]; then
-        if (( \$choice >= 1 && \$choice <= ${#exivm[@]} )); then
-            selected_vm='${exivm[choice-1]}'
-            printf '%s %s\n' 'Starting' \$selected_vm
-            cd \$HOME/qemuvirt/virts && ./\$selected_vm
-            sleep 1
+    kitty -e bash -c '
+    printf "%s\n\n" "Available VMs"
+    mapfile -t nvtmp < $vmstmp
+    for i in "${!nvtmp[@]}"; do
+        echo $((i + 1)). ${nvtmp[i]}
+    done
+    echo
+    read -p "Which one would like to start? [1-${#nvtmp[@]}]: " choice
+    if [[ $choice =~ ^[0-9]+$ ]]; then
+        if (( $choice >= 1 && $choice <= ${#nvtmp[@]} )); then
+            selected_vm=${nvtmp[$(($choice - 1))]}
+            printf "\n%s %s\n" "Starting" $selected_vm
+            cd $HOME/mydir/qemuvirt/virts && ./$selected_vm
+            sleep 1.5
             exit 0
         else
-            echo 'Invalid choice. Exiting.'
-            sleep 2
+            echo "Invalid choice. Exiting."
+            sleep 1.5
             exit 1
         fi
     else
-        echo 'Invalid choice. Exiting.'
-        sleep 2
+        echo "Invalid choice. Exiting."
+        sleep 1.5
         exit 1
     fi
-    "
+    '
 
     rm ${vmstmp}
 fi
