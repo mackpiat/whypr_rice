@@ -1,7 +1,7 @@
 #!/bin/sh
 
-VMS=('ubuntu-server' 'opensuse-tw')
-IPS=('192.168.31.7' '192.168.31.6')
+VMS=('ubuntu-server' 'opensuse-tw' 'alpine')
+IPS=('192.168.1.7' '192.168.1.6' '192.168.1.5')
 
 PIDDIR="$HOME/mydir/qemuvirt/runpid"
 MENUXML="$HOME/.config/waybar/scripts/qemu_menu.xml"

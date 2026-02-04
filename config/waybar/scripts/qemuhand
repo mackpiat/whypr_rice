@@ -3,6 +3,7 @@
 PIDS=(
     'qemu-opensuse-tw.pid'
     'qemu-ubuntu-server.pid'
+    'qemu-alpine.pid'
 )
 QEMDIR="$HOME/mydir/qemuvirt"
 found_any_running=false
@@ -14,7 +15,7 @@ do
     if [ "${running}" == "$(ls ${QEMDIR}/runpid/)" ]; then
         vm=${running}
         check=$(echo $vm | awk '{split($0,i,"-"); print i[2]"-"i[3];}' | sed -e 's/.pid//g')
-        [[ "$vm" == *$check* ]] && kitty -e bash -c "figlet "$check"; ssh $check"
+        [[ "$vm" == *$check* ]] && st -e bash -c "figlet "$check"; ssh $check"
         found_any_running=true
     fi
 done
@@ -28,7 +29,7 @@ if ! $found_any_running; then
         echo ${exivm[i]} >> $vmstmp
     done
 
-    kitty -e bash -c '
+    st -e bash -c '
     printf "%s\n\n" "Available VMs"
     mapfile -t nvtmp < $vmstmp
     for i in "${!nvtmp[@]}"; do
