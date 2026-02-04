@@ -1,8 +1,10 @@
 [Match]
 Name=br0
 
-[Link]
-RequiredForOnline=no
-
 [Network]
-DHCP=ipv4
+Address=[X.X.X.X]/24
+Gateway=X.X.X.X
+DNS=X.X.X.X
+
+[DHCP]
+RouteMetric=100

@@ -2,6 +2,7 @@
 Name=wl*
 
 [Network]
-DHCP=ipv4
-DNS=1.1.1.1
-DNS=8.8.8.8
+DHCP=yes
+
+[DHCP]
+RouteMetric=200
